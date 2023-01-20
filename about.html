@@ -1,0 +1,75 @@
+[[1,2,3,4,5], [6,7,8,9,10], [11,12,13,14,15]]
+
+[[1,6,11],[2,7,12],[3,8,13],[4,9,14],[5,10,15]]
+
+
+arr = [[1,2,3,4,5], [6,7,8,9,10], [11,12,13,14,15]];
+outerArr = [];
+newArr = []
+for (i = 0;i < 5; i++) {
+    for(j = 0;j < 3; j++) {
+        newArr.push(arr[j][i])
+    }
+    outerArr.push(newArr)
+    newArr = []
+}
+
+console.log(outerArr)
+
+
+<?php
+$array = [[1,2,3,4,5], [6,7,8,9,10], [11,12,13,14,15]];
+$arr1 = [];
+$arr2 = [];
+for($i=0;$i<5;$i++){
+ for($j=0;$j<3;$j++){
+    $arr1[] = $array[$j][$i]; 
+ }
+ $arr2[] = $arr1;
+ $arr1 = [];
+}
+echo "<pre>";
+print_r($arr1);
+?>
+
+
+<?php
+$string='aaaabcdeeeddddddddfdddddfaacccccccccccabheeezxczxZXceeeee';
+$arr_str=array();
+for($i=0;$i<strlen($string);$i++)
+{
+    if(in_array($string[$i],$arr_str[$i+1]))
+    {
+       $arr_str[$string[$i]]=1;
+       //echo ($arr_str);
+    }
+    else
+    {
+       $arr_str[$string[$i]]+=1;
+     }
+}
+echo "<pre>";
+print_r($arr_str);
+
+ foreach($arr_str as $key => $value)
+  {
+    echo $key.' Repeats '.$value.' Times'.'<br/>';
+  }
+
+
+
+$count = 0;  
+$num = 2;  
+while ($count < 15){  
+  $div_count=0;  
+    for($i=1; $i<=$num; $i++){  
+      if(($num%$i)==0){  
+         $div_count++;  
+      }  
+    }  
+    if($div_count<3){  
+      echo $num." ";  
+      $count=$count+1;  
+    }  
+  $num=$num+1;  
+}
